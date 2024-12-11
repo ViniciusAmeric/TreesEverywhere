@@ -1,0 +1,27 @@
+<h1>Árvores Plantadas nas Suas Contas</h1>
+
+<!-- Lista de contas do usuário -->
+{% if user_accounts %}
+    <h2>Suas Contas</h2>
+    <ul>
+        {% for account in user_accounts %}
+            <li>{{ account.name }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Você não faz parte de nenhuma conta. 😞</p>
+{% endif %}
+
+<!-- Lista de árvores plantadas nas contas -->
+{% if account_planted_trees %}
+    <h2>Árvores Plantadas</h2>
+    <ul>
+        {% for tree in account_planted_trees %}
+            <li>
+                {{ tree.tree.name }} - Localização: {{ tree.location }} - Conta: {{ tree.account.name }}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Nenhuma árvore foi plantada nas contas associadas. 🌱</p>
+{% endif %}

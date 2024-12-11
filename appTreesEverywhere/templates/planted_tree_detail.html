@@ -1,0 +1,8 @@
+{% block content %}
+<h1>Detalhes da Árvore</h1>
+<p>Árvore: {{ planted_tree.tree.name }}</p>
+<p>Idade: {{ planted_tree.age }} anos</p>
+<p>Local: {{ planted_tree.location }}</p>
+<p>Plantada em: {{ planted_tree.planted_at|date:"b. d, Y, H:i p" }}</p>
+<p>Plantada por: {{ planted_tree.user.username }}</p>  
+{% endblock %}
